@@ -1,5 +1,5 @@
-function save () {
-    localStorage.setItem("allTasks", JSON.stringify(allTasks));
+function save (dataString, data) {
+    localStorage.setItem(dataString, JSON.stringify(data));
 };
 
 function retrieve (item) {

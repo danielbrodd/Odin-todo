@@ -4,9 +4,9 @@ function createTask({name, description = "", dueDate = new Date(), piority = 4, 
 }
 
 
-function addTask(options){
+function addTask(options, container){
     var task = createTask(options);
-    tasks.push(task)
+    container.push(task)
 }
 
 export default addTask

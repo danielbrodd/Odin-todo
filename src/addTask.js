@@ -1,11 +1,13 @@
 
-function createTask({title, description = "", dueDate = new Date().toDateString(), piority = 4, subCheckList = [], projectID, completed = false, parentTask}){
+function createTask({title, description = "", dueDate = new Date().toDateString(), piority = 4, projectID, completed = false, }){
     const id = Math.random().toString(16).slice(2);
-    const addSubtask = (suboptions)=> {
+    
+    // Remove add subtask feature due to complexity issues with recursion and stringify
+    /*const addSubtask = (suboptions)=> {
         suboptions.parentTask = id; 
         subCheckList.push(createTask(suboptions))
-    }
-    return {title, description, dueDate, piority, subCheckList, projectID, completed, id, parentTask, addSubtask}
+    }*/
+    return {title, description, dueDate, piority, projectID, completed, id}
 }
 
 

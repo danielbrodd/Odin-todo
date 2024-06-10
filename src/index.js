@@ -18,12 +18,4 @@ if (localStorage.getItem('bucket') === null) {
     
 let bucket = retrieve()
 
-
-
-
-
-
-// save(`TASKS_${PROJECT_DEFAULT.name}`, PROJECT_DEFAULT);
-
-// var returned = retrieve(`TASKS_${PROJECT_DEFAULT.name}`)
-// sconsole.log(returned) 
+bucket[0].addTask({title: "Third"})

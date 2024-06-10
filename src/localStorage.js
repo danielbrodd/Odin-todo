@@ -1,6 +1,11 @@
+import { createProject } from "./projectsManagement.js";
+import createTask from "./addTask.js";
+
 export function save(data) {
+    console.log(data)
     data.addTask = data.addTask.toString()
-    let bucket = JSON.parse(localStorage.getItem('bucket'));
+    console.log(data)
+    let bucket = JSON.parse(localStorage.getItem('bucket')) || [];
     
     bucket.push(data);
     
@@ -9,16 +14,16 @@ export function save(data) {
 };
 
 export function retrieve () {
-    var bucket = localStorage.getItem('bucket');
-    bucket = JSON.parse(bucket);
-    for (let each in bucket) {
-        bucket[each].addTask = eval("("+bucket[each].addTask+")");
+    let bucket = localStorage.getItem('bucket');
+    bucket = JSON.parse(bucket) || [];
+    for (let each of bucket) {
+        each.addTask = eval("(" + each.addTask + ")");
     };
     console.log('retrieved');
 
-    for (let each of bucket) console.log(each);
 
     return bucket
 
 };
+
 
